@@ -2,7 +2,7 @@ package com.eamon.designpatternv2.SOLID.LawOfDemeter;
 
 import org.junit.Test;
 
-public class TestDemeter {
+public class TestMethodDemeter {
     @Test
     public void test() {
         Diner diner = new Diner();
