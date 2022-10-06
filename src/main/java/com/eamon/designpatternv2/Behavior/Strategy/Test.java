@@ -1,4 +1,4 @@
-package com.eamon.designpatternv2.Behavior.Template;
+package com.eamon.designpatternv2.Behavior.Strategy;
 
 public class Test {
     public static void main(String[] args) {
