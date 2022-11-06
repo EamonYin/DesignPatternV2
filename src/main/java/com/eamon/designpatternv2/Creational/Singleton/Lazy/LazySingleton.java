@@ -11,6 +11,11 @@ public class LazySingleton {
 
     public static LazySingleton getInstance() {
         if (instance == null) {
+            try {
+                Thread.sleep(1000L);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             instance = new LazySingleton();
         }
         return instance;

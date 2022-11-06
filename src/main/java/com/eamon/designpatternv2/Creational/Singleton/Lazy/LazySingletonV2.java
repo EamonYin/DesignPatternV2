@@ -13,8 +13,13 @@ public class LazySingletonV2 {
     public static LazySingletonV2 getInstance() {
         //如果instance不为null，无需抢锁，返回instance即可
         if (instance == null) {
-            //避免多线程调用时，创建多个instance
+            //避免多线程调用时，创建多个instance≈
             synchronized (LazySingletonV2.class) {
+                try {
+                    Thread.sleep(3000L);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 //抢到锁的线程判断是否为null
                 if (instance == null) {
                     instance = new LazySingletonV2();
